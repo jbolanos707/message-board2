@@ -20,12 +20,12 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' https://*.firebaseio.com",
       'font-src': "'self'",
-      'connect-src': "'self'",
+      'connect-src': "'self' wss://*.firebaseio.com",
       'img-src': "'self'",
       'style-src': "'self' 'unsafe-inline'",
-      'frame-src': "'none'"
+      'frame-src': "'self' https://*.firebaseio.com"
     }
   };
 
