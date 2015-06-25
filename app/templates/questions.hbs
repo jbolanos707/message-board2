@@ -1,1 +1,20 @@
+<h2>Questions Page!</h2>
 
+
+<ul>
+  {{#each question in model}}
+    <li>
+      {{#link-to 'question' question}}
+        Author: {{question.author}}
+        <br>
+        Description: {{question.description}}
+        <br>
+        <br>
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+
+<div class="new-question-link">{{#link-to 'questions.new'}} Add a Question{{/link-to}}</div>
+
+{{outlet}}

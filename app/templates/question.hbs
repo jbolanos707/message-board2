@@ -1,1 +1,40 @@
+{{#if isEditingQuestion}}
+  <form>
+    <div class="form-group">
+      <label for="author">Author</label>
+      {{input id="author" class="form-control" value=model.author}}
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      {{input id="description" class="form-control" value=model.description}}
+    </div>
+    <div class="form-group">
+      <label for="body">Question</label>
+      {{input id="body" class="form-control" value=model.body}}
+    </div>
 
+    <button class="btn btn-success" {{action 'save'}}>Save</button>
+  </form>
+{{else}}
+  <h3>Author: {{model.author}}</h3>
+  <h3>Description: {{model.description}}</h3>
+  <h4>{{model.body}}</h4>
+  <button class="btn btn-primary" {{action 'edit'}}>Edit Question</button>
+  <button class="btn btn-danger" {{action 'delete'}}>Delete Question</button>
+
+  <!-- <button class="btn btn-success">{{#link-to 'answers'}}Click to See All Answers to this Question!{{/link-to}}</button>
+  {{outlet}} -->
+  <h3>Answers: </h3>
+  <ul>
+    {{#each answer in model.answers}}
+      <li>
+        answer: {{answer.answer_body}}
+        <br>
+        date submitte: {{answer.date}}
+      </li>
+    {{/each}}
+  </ul>
+
+  <div class="new-answer-link">{{#link-to 'answers.new'}} Add an Answer{{/link-to}}</div>
+  {{outlet}}
+{{/if}}
