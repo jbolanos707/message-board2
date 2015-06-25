@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  renderTemplate: function() {
-    this.render({ outlet: "new-question"});
+  model: function(params) {
+    return this.store.find('question', params.question_id);
   }
 });
