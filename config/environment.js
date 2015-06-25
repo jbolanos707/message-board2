@@ -4,7 +4,6 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'message-board2',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
     firebase: 'https://sweltering-fire-9232.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
