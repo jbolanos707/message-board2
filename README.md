@@ -1,7 +1,6 @@
 # Message-board2
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Simple message board app that allows users to post kid-friendly jokes and allow the community to post answers to the jokes. Currently only posting a new question and following the link to that specific question is functioning. Answers are not being submitted and posted.
 
 ## Prerequisites
 
@@ -15,7 +14,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone https://github.com/jbolanos707/message-board2.git` this repository
+* git clone `https://github.com/jbolanos707/message-board2.git` this repository
 * change into the new directory
 * `npm install`
 * `bower install`
