@@ -1,45 +1,43 @@
-<h2 class="text-center page-header">{{model.name}}</h2>
-
-
-<h2> {{model.body}}</h2>
-
-
-
-
 {{#if isEditing}}
 
   <form>
 
     <div class="form-group">
-      <label for="name">Enter Author Name:</label>
+      <label for="name">Duckster Name:</label>
       {{input id="name" value=model.name class="form-control"}}
-      <label for="body">Enter Question:</label>
-      {{textarea rows="10" id="body" value=model.body class="form-control" placeholder="Edit Question"}}
+      <label for="body">Joke:</label>
+      {{textarea rows="10" id="body" value=model.body class="form-control" placeholder="Make sure not to include the answer to your joke"}}
 
 
     </div>
 
-      <button class="btn btn-success" {{action "save" model}}>Submit New Question</button>
+      <button class="btn btn-success" {{action "save" model}}>Submit</button>
   </form>
 
 {{else}}
-  <p class="btn btn-info" {{action "edit"}}> Edit Question</p>
+
+<div class="jumbotron">
+  <h2>{{model.body}}</h2>
+  <h4>by {{model.name}}</h4>
+  <br>
+  <button class="btn btn-default btn-xs" {{action "edit"}}>Edit Joke</button>
+  <button class="btn btn-default btn-xs" {{action "delete"}}>Delete Joke</button>
+</div>
+
 {{/if}}
-<hr>
-<button {{action "delete"}} class="btn btn-danger"> Delete Question </button>
 
 <div class="row">
 
   <div class="col-md-4 col-md-offset-1">
-    <h4> Answers</h4>
-    <ul class="list-unstyled list-group">
+    <ul class="answer-links">
       {{#each answer in model.answers}}
         <li class="list-group-item">{{answer.text}} on {{answer.date}}</li>
 
       {{/each}}
     </ul>
   </div>
-  <h2>{{#link-to "new-answer"}}<p class="btn btn-success"> Add New Answer</p>{{/link-to}} </h2>
+  <p>{{#link-to "new-answer" classNames="btn btn-default btn-lg newAnswer"}}Your Answer To The Joke{{/link-to}}</p>
+
 
   <div class="col-md-3">
     <br><br>

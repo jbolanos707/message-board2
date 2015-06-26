@@ -1,12 +1,12 @@
 <form>
   <div class="form-group">
-    <label for="name">Enter Author Name:</label>
+    <label for="name">Duckster Name:</label>
     {{input id="name" value=name class="form-control"}}
-    <label for="body">Enter Question:</label>
-    {{textarea rows="10" id="body" value=body class="form-control" placeholder="question"}}
+    <label for="body">What is your joke?:</label>
+    {{textarea rows="10" id="body" value=body class="form-control" placeholder="Make sure not to give us the answer"}}
 
 
   </div>
 
-    <button class="btn btn-success" {{action "save"}}>Submit New Question</button>
+    <button class="btn btn-default" {{action "save"}}>Submit New Question</button>
 </form>

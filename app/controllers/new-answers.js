@@ -11,12 +11,12 @@ export default Ember.Controller.extend({
       });
 
       var question = this.get("controllers.question.model");
-      newAnswer.set('question', question);
+
       newAnswer.save().then(function() {
-        question.get('answers').pushObject(newAnswer);    //saves to firebase but only will show up once.. need it with associations
+        question.get('answers').pushObject(newAnswer);
         question.save();
       });
-
+console.log(newAnswer);
       this.setProperties({
         text: ''
       });
